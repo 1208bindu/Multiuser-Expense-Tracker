@@ -17,13 +17,13 @@ export const GlobalProviderExpenses = ({ children }) => {
     console.log("id" + id);
     try {
       const res = await axios.get(`/api/v1/transaction/${id}`);
-      console.log("res" + res.data);
+      console.log("res" + res.data.data);
       dispatch({
         type: "GET_TRANSACTION",
         payload: res.data.data,
       });
     } catch (err) {
-      console.log("Err" + err);
+      console.log("Err" + err.response);
       dispatch({
         type: "TRANSACTION_ERROR",
         payload: err.response.data.error,
