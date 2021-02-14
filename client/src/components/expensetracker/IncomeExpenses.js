@@ -6,9 +6,9 @@ const IncomeExpenses = () => {
   let income = 0;
   let expense = 0;
 
-  transaction.map((trans) => {
-    trans.amount > 0 ? (income += trans.amount) : (expense += trans.amount);
-  });
+  transaction.map((trans) =>
+    trans.amount > 0 ? (income += trans.amount) : (expense += trans.amount)
+  );
 
   return (
     <div className="row ie-row">

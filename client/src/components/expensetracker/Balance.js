@@ -7,9 +7,9 @@ const Balance = () => {
   let expense = 0;
   let total = 0;
 
-  transaction.map((trans) => {
-    trans.amount > 0 ? (income += trans.amount) : (expense += trans.amount);
-  });
+  transaction.map((trans) =>
+    trans.amount > 0 ? (income += trans.amount) : (expense += trans.amount)
+  );
 
   total = income - Math.abs(expense);
   return (
