@@ -20,9 +20,6 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-app.use("/", users);
-app.use("/api/v1/transaction", transactions);
-
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
   app.use(express.static(path.join(__dirname, "client/build")));
@@ -32,6 +29,9 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "client/build", "index.html"));
   });
 }
+
+app.use("/", users);
+app.use("/api/v1/transaction", transactions);
 
 const PORT = process.env.PORT || 5000;
 
