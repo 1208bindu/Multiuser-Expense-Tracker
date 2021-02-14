@@ -1,10 +1,15 @@
-const { CLIENT_ORIGIN } = require("../config/db.js");
+//const { CLIENT_ORIGIN } = require("../config/db.js");
 
 // This file is exporting an Object with a single key/value pair.
 // However, because this is not a part of the logic of the application
 // it makes sense to abstract it to another file. Plus, it is now easily
 // extensible if the application needs to send different email templates
 // (eg. unsubscribe) in the future.
+CLIENT_ORIGIN =
+  process.env.NODE_ENV === "production"
+    ? process.env.CLIENT_ORIGIN
+    : "http://localhost:3000";
+
 module.exports = {
   confirm: (id) => ({
     subject: " Confirm Email-id to complete registration",
