@@ -7,14 +7,16 @@ const cors = require("cors");
 const { connectDB } = require("./config/db");
 
 dotenv.config({ path: "./config/config.env" });
-app.use(cors());
-app.options("*", cors());
+
 connectDB();
 
 const users = require("./routes/users");
 const transactions = require("./routes/TransactionRoutes");
 
 const app = express();
+
+app.use(cors());
+app.options("*", cors());
 
 app.use(express.json());
 
