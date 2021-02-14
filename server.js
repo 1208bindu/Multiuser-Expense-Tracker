@@ -3,6 +3,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const colors = require("colors");
 const morgan = require("morgan");
+const cors = require("cors");
 const { connectDB } = require("./config/db");
 
 dotenv.config({ path: "./config/config.env" });
@@ -13,6 +14,10 @@ const users = require("./routes/users");
 const transactions = require("./routes/TransactionRoutes");
 
 const app = express();
+
+app.use(
+  cors({ CLIENT_ORIGIN: process.env.CLIENT_ORIGIN || "http://localhost:3000" })
+);
 
 app.use(express.json());
 
