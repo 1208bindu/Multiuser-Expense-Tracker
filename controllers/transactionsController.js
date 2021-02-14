@@ -1,4 +1,4 @@
-const Transaction = require("../models/TransactionModel");
+const Transaction = require("../models/transactionModel");
 
 // @desc    Get all transactions
 // @route   GET /api/v1/transactions
