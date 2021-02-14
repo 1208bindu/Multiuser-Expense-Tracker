@@ -7,7 +7,8 @@ const cors = require("cors");
 const { connectDB } = require("./config/db");
 
 dotenv.config({ path: "./config/config.env" });
-
+app.use(cors());
+app.options("*", cors());
 connectDB();
 
 const users = require("./routes/users");
@@ -31,7 +32,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.use("/", cors(), users);
+app.use("/", users);
 app.use("/api/v1/transaction", transactions);
 
 const PORT = process.env.PORT || 5000;
