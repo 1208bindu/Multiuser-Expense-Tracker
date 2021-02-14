@@ -1,0 +1,207 @@
+/* body.modal-open{
+  position: static;
+    height: auto;
+    overflow: auto;
+    padding-right: 0 !important;
+} */
+.margins {
+  padding: 1% 5% 2% 5% !important;
+}
+.btnLogin {
+  width: 100% !important;
+}
+.loginPage {
+  margin-top: 5% !important;
+}
+.navColor {
+  background-color: #28868e;
+}
+.textColor {
+  color: #28868e;
+}
+.sidenav {
+  width: auto;
+  top: 60px;
+  height: auto;
+  padding: 0.5%;
+}
+
+.brand-logo {
+  margin-left: 3%;
+}
+
+.alert-p {
+  color: red;
+  text-emphasis: bold;
+}
+
+.img-heart {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+}
+.postImage {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin: 5px;
+}
+.file-item {
+  float: left;
+  width: 110px;
+  height: 110px;
+  margin: 10px;
+}
+.file-img {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  float: left;
+}
+
+.author {
+  font-size: medium;
+  font-weight: 400;
+}
+
+.authorCmt {
+  font-size: medium;
+  font-weight: 300;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 7px;
+  padding-left: 5px;
+  margin-left: 10%;
+  width: 80%;
+}
+.comments {
+  margin-left: 10%;
+  margin-right: 10%;
+  float: right;
+}
+.comments:hover {
+  cursor: pointer;
+}
+
+.Reply {
+  margin-left: 10%;
+  margin-right: 10%;
+  float: right;
+}
+.Reply:hover {
+  cursor: pointer;
+}
+.commentsAll {
+  display: none;
+}
+.reply {
+  display: none;
+}
+.txtArea {
+  width: 70%;
+  margin-left: 10%;
+  height: 35px;
+  margin-right: 2%;
+  margin-top: -17px;
+  float: left;
+  border-radius: 6px;
+}
+.btnReply {
+  margin-top: -22px;
+}
+.postSummary {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid lightblue;
+  border-radius: 13px;
+}
+.postDescription {
+  font-size: medium;
+  font-weight: 200;
+  margin-left: 25px;
+  margin-right: 10px;
+  text-align: justify;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.mind {
+  color: rgba(100, 100, 155);
+  margin: 10px;
+}
+
+.ImageBox {
+  display: inline-block;
+  width: 50%;
+}
+.Images1 {
+  width: 50%;
+  height: 200px;
+}
+.Images2 {
+  width: 43%;
+  height: 200px;
+  float: left;
+  display: block;
+  margin: 1% 3%;
+  border: 1px solid gainsboro;
+}
+.ImagesModal {
+  width: 95%;
+  height: 90%;
+
+  display: block;
+  margin: 3%;
+  border: 1px solid gainsboro;
+}
+.MoreImages {
+  position: relative;
+}
+.showMore {
+  display: none;
+}
+.carousel {
+  height: 500px;
+  margin: 0;
+  width: 100%;
+}
+
+.image-slide {
+  height: 100%;
+  width: 100%;
+  transition: background-image 0.3s ease-in-out;
+}
+
+.slide-arrow {
+  color: #14b6d4;
+  cursor: pointer;
+  font-size: 2rem;
+  position: fixed;
+  top: 50%;
+}
+
+.slide-arrow.right {
+  right: 2rem;
+}
+
+.slide-arrow.left {
+  left: 2rem;
+}
+.text-block {
+  position: absolute;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4%;
+  margin: 1% 3%;
+
+  width: 43%;
+  height: 200px;
+}

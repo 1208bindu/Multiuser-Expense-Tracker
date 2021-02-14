@@ -1,0 +1,12 @@
+#img-div {
+  width: 50%;
+}
+#image {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  float: center;
+}
+#confirm {
+  margin-top: 100px;
+}
