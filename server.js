@@ -15,10 +15,6 @@ const transactions = require("./routes/TransactionRoutes");
 
 const app = express();
 
-app.use(
-  cors({ CLIENT_ORIGIN: process.env.CLIENT_ORIGIN || "http://localhost:3000" })
-);
-
 app.use(express.json());
 
 if (process.env.NODE_ENV === "development") {
@@ -35,7 +31,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.use("/", users);
+app.use("/", cors(), users);
 app.use("/api/v1/transaction", transactions);
 
 const PORT = process.env.PORT || 5000;
