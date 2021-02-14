@@ -8,7 +8,7 @@ const {
   isTokenValid,
   forgotPwd,
   changePwd,
-} = require("../controllers/users");
+} = require("../controllers/Users");
 
 router.route("/").get(getUserDetails);
 
