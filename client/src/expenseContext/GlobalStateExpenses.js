@@ -17,7 +17,7 @@ export const GlobalProviderExpenses = ({ children }) => {
     console.log("id" + id);
     try {
       const res = await axios.get(`/api/v1/transaction/${id}`);
-      console.log("res" + res.data.data);
+      console.log("res" + res);
       dispatch({
         type: "GET_TRANSACTION",
         payload: res.data.data,

@@ -56,8 +56,8 @@ const Login = () => {
         className="col l8 offset-l2 center "
         style={{ display: "none" }}
       >
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
+        <div className="card blue-grey darken-1">
+          <div className="card-content white-text">
             <h5>
               <i>
                 Email-id already registered but not confirmed, Kindly confirm
@@ -123,7 +123,7 @@ const Login = () => {
                   </button>
                 </div>
                 <span className="center">
-                  <p className>
+                  <p>
                     <Link className="textColor" to="/forgotpwd">
                       Forgot Password?
                     </Link>

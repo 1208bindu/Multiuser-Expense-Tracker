@@ -7,10 +7,13 @@ const Balance = () => {
   let expense = 0;
   let total = 0;
 
-  transaction.map((trans) =>
-    trans.amount > 0 ? (income += trans.amount) : (expense += trans.amount)
-  );
+  console.log(transaction);
 
+  if (transaction) {
+    transaction.map((trans) =>
+      trans.amount > 0 ? (income += trans.amount) : (expense += trans.amount)
+    );
+  }
   total = income - Math.abs(expense);
   return (
     <div className="card center navColor white-text text-darken-2">
