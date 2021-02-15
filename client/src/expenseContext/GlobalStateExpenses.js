@@ -16,7 +16,18 @@ export const GlobalProviderExpenses = ({ children }) => {
   async function getTransaction(id) {
     console.log("id" + id);
     try {
-      const res = await axios.get(`/api/v1/transaction/${id}`);
+      const config = {
+        headers: {
+          accept: "application/json",
+        },
+        data: {},
+      };
+      const id1 = { userId: id };
+      const res = await axios.post(
+        "/api/v1/transaction/getDetails",
+        id1,
+        config
+      );
       console.log("res" + res);
       dispatch({
         type: "GET_TRANSACTION",

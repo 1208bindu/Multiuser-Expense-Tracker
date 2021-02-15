@@ -7,7 +7,8 @@ const {
 } = require("../controllers/transactionsController");
 
 router.route("/").post(addTransaction);
+router.route("/getDetails").post(getTransaction);
 
-router.route("/:id").get(getTransaction).delete(deleteTransaction);
+router.route("/:id").delete(deleteTransaction);
 
 module.exports = router;

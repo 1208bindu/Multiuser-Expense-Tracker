@@ -5,12 +5,14 @@ const Transaction = require("../models/transactionModel");
 // @access  Public
 exports.getTransaction = async (req, res, next) => {
   try {
+    const { userId } = req.body;
+    console.log(req.body);
+    console.log("userid" + userId);
+
     const transaction = await Transaction.find();
-
-    const transactions = await transaction.filter(
-      (t) => req.params.id === t.userId
-    );
-
+    //console.log(transaction);
+    const transactions = await transaction.filter((t) => userId === t.userId);
+    console.log(transactions);
     return res.status(200).json({
       success: true,
       count: transactions.length,

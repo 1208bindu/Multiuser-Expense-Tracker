@@ -7,7 +7,9 @@ const TransactionList = () => {
   const { transaction, getTransaction } = useContext(GlobalContextExpenses);
   const { currentUser } = useContext(GlobalContext);
   console.log(currentUser);
+
   useEffect(() => {
+    console.log("ffff" + currentUser.id);
     getTransaction(currentUser.id);
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentUser.id]);
