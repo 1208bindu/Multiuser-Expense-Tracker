@@ -112,14 +112,14 @@ exports.changePwd = async (req, res) => {
 
 exports.confirmationEmail = (req, res) => {
   const { id } = req.params;
-  console.log(id);
+  console.log("ppppp" + id);
   UserDetails.findById(id)
     .then((user) => {
       if (!user) {
         res.json({ msg: msgEmail.couldNotFind });
       } else if (user && !user.confirmed) {
         UserDetails.findByIdAndUpdate(id, { confirmed: true })
-          .then(() => res.json({ msg: msgEmail.confirmed }))
+          .then(() => res.status(200).json({ msg: "confirmed" }))
           .catch((err) => console.log(err));
       }
 

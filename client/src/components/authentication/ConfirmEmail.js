@@ -8,7 +8,7 @@ const ConfirmEmailId = (props) => {
   useEffect(() => {
     console.log("params" + props.match.params.id);
     confirmationEmail(props.match.params.id);
-  }, []);
+  }, [confirmationEmail, props.match.params.id]);
 
   return (
     <div>
