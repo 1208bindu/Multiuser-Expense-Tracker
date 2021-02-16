@@ -2,9 +2,9 @@
 
 > Full stack expense tracker is also deployed at 
 
-## https://track-expenses-bt.herokuapp.com/
-
 ## Usage
+
+### https://track-expenses-bt.herokuapp.com/
 
 ```
 change config.env file in config folder
