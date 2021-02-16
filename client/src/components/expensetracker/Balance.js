@@ -15,15 +15,15 @@ const Balance = () => {
     );
   }
   total = income - Math.abs(expense);
-  if (total >= 0) {
-    document.getElementsByClassName("balance").style.color = "green";
-  } else {
-    document.getElementsByClassName("balance").style.color = "red";
-  }
+  // if (total >= 0) {
+  //   document.getElementsByClassName("balance").style.color = "green";
+  // } else {
+  //   document.getElementsByClassName("balance").style.color = "red";
+  // }
 
   return (
     <div className="card center navColor white-text text-darken-2">
-      <h4 className="balance">
+      <h4>
         Your Balance - <span> {total}.00 NOK</span>
       </h4>
     </div>
