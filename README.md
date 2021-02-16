@@ -1,6 +1,8 @@
-# Expense Tracker (MERN)
+# Multiuser Expense Tracker (MERN)
 
-> Full stack expense tracker
+> Full stack expense tracker is also deployed at 
+
+## https://track-expenses-bt.herokuapp.com/
 
 ## Usage
 
