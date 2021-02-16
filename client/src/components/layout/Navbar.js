@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect } from "react";
 import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
@@ -7,7 +8,7 @@ function Navbar() {
   const { isTokenValid } = useContext(GlobalContext);
 
   let token = localStorage.getItem("auth-token");
-  console.log(token);
+
   useEffect(() => {
     isTokenValid(token);
   }, []);

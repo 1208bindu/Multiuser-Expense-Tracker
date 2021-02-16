@@ -8,7 +8,6 @@ const ForgotPwd = (props) => {
   let [err, setError] = useState(error);
 
   useEffect(() => {
-    console.log("findemail" + findEmail);
     if (findEmail && !err) {
       document.getElementById("form1").style.display = "none";
       document.getElementById("confirm").style.display = "block";

@@ -1,3 +1,4 @@
+/* eslint-disable no-redeclare */
 import React, { useState, useContext } from "react";
 import { GlobalContextExpenses } from "../../expenseContext/GlobalStateExpenses";
 import { GlobalContext } from "../../context/GlobalState";
@@ -6,12 +7,11 @@ import "../../css/ExpensesCss.css";
 const NewTransaction = () => {
   const { addTransaction } = useContext(GlobalContextExpenses);
   const { currentUser } = useContext(GlobalContext);
-  console.log(currentUser.id);
 
   const [details, setDetails] = useState("");
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("income");
-  console.log(category);
+
   const onSub = (e) => {
     e.preventDefault();
     if (category === "expenses") {

@@ -14,7 +14,6 @@ export const GlobalProviderExpenses = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   async function getTransaction(id) {
-    console.log("id" + id);
     try {
       const config = {
         headers: {
@@ -28,13 +27,12 @@ export const GlobalProviderExpenses = ({ children }) => {
         id1,
         config
       );
-      console.log("res" + res);
+
       dispatch({
         type: "GET_TRANSACTION",
         payload: res.data.data,
       });
     } catch (err) {
-      console.log("Err" + err.response);
       dispatch({
         type: "TRANSACTION_ERROR",
         payload: err.response.data.error,
@@ -57,12 +55,7 @@ export const GlobalProviderExpenses = ({ children }) => {
   }
 
   async function addTransaction(transaction) {
-    console.log(transaction);
     const config = {
-      //     headers:{
-      //         'content/type':'application/json'
-      //     }
-      // }
       headers: {
         accept: "application/json",
       },
@@ -70,7 +63,7 @@ export const GlobalProviderExpenses = ({ children }) => {
     };
 
     const res = await axios.post("/api/v1/transaction", transaction, config);
-    console.log(res);
+
     try {
       dispatch({
         type: "ADD_RECORD",

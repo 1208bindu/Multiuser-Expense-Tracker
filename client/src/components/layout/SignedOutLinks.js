@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";

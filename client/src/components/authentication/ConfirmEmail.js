@@ -6,7 +6,6 @@ const ConfirmEmailId = (props) => {
   const { confirmationEmail } = useContext(GlobalContext);
 
   useEffect(() => {
-    console.log("params" + props.match.params.id);
     confirmationEmail(props.match.params.id);
   }, [confirmationEmail, props.match.params.id]);
 

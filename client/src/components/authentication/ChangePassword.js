@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../context/GlobalState";
@@ -18,7 +19,6 @@ const ChangePassword = (props) => {
       document.getElementById("confirm").style.display = "block";
     }
     if (error) {
-      console.log(error);
       setErr(error);
     }
 

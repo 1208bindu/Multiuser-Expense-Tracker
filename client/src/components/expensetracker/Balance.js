@@ -7,8 +7,6 @@ const Balance = () => {
   let expense = 0;
   let total = 0;
 
-  console.log(transaction);
-
   if (transaction) {
     transaction.map((trans) =>
       trans.amount > 0 ? (income += trans.amount) : (expense += trans.amount)

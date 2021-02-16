@@ -34,12 +34,9 @@ exports.getUserDetails = async (req, res, next) => {
 exports.forgotPwd = async (req, res, next) => {
   try {
     const { email } = req.params;
-    console.log(email);
 
     const existingUser = await UserDetails.findOne({ email: email });
-    console.log(existingUser);
     if (existingUser) {
-      console.log("sending email");
       sendEmail(existingUser.email, templates.forgotPassword(existingUser._id))
         .then(() => res.status(200).json({ msg: msgEmail.forgotPassword }))
         .catch((err) => console.log(err));
@@ -94,7 +91,7 @@ exports.addUserDetails = async (req, res, next) => {
 
 exports.changePwd = async (req, res) => {
   const { id, password } = req.body;
-  console.log(id);
+
   const salt = await bcrypt.genSalt();
   const passwordHash = await bcrypt.hash(password, salt);
   await UserDetails.findById(id)
@@ -112,7 +109,7 @@ exports.changePwd = async (req, res) => {
 
 exports.confirmationEmail = (req, res) => {
   const { id } = req.params;
-  console.log("ppppp" + id);
+
   UserDetails.findById(id)
     .then((user) => {
       if (!user) {

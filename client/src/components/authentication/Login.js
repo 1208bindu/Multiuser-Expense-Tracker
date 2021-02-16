@@ -13,7 +13,6 @@ const Login = () => {
   const [err, setErr] = useState(error);
 
   const history = useHistory();
-  console.log(isauthenticated);
 
   useEffect(() => {
     if (isauthenticated) {
@@ -26,7 +25,6 @@ const Login = () => {
     }
 
     if (error) {
-      console.log(error);
       setErr(error);
     }
 

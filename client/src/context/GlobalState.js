@@ -88,9 +88,8 @@ export const GlobalProvider = ({ children }) => {
 
   async function forgotPwd(email) {
     try {
-      console.log(email);
       const res = await axios.post(`/fp/${email}`);
-      console.log(res);
+
       dispatch({
         type: "FORGOT_PWD",
         payload: res.data.data,
@@ -107,7 +106,6 @@ export const GlobalProvider = ({ children }) => {
 
   async function confirmationEmail(id) {
     try {
-      console.log("tddd" + id);
       const res = await axios.post(`/confirm/${id}`);
 
       dispatch({
@@ -154,7 +152,6 @@ export const GlobalProvider = ({ children }) => {
         auth: true,
       });
     } catch (err) {
-      console.log(err.response.data);
       dispatch({
         type: "USER_ERROR",
         payload: err.response.data.msg,

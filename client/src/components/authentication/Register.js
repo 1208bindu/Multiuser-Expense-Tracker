@@ -1,15 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../context/GlobalState";
-import { useHistory } from "react-router-dom";
+
 import "./style.css";
 
 const Register = (props) => {
   const { addUserDetails, error, registrationSuccess } = useContext(
     GlobalContext
   );
-
-  const history = useHistory();
 
   let [firstname, setFirstName] = useState("");
   let [lastname, setLastName] = useState("");
@@ -31,7 +29,6 @@ const Register = (props) => {
     }
 
     if (error) {
-      console.log(error);
       setErr(error);
     }
 
