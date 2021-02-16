@@ -16,7 +16,7 @@ router.route("/fp/:email").post(forgotPwd);
 
 router.route("/register").post(addUserDetails);
 
-router.route("/confirm/:id").get(confirmationEmail);
+router.route("/confirm/:id").post(confirmationEmail);
 router.route("/login").post(userLogin);
 
 router.route("/valid").post(isTokenValid);

@@ -108,7 +108,7 @@ export const GlobalProvider = ({ children }) => {
   async function confirmationEmail(id) {
     try {
       console.log("tddd" + id);
-      const res = await axios.get(`/confirm/${id}`);
+      const res = await axios.post(`/confirm/${id}`);
 
       dispatch({
         type: "CONFIRM_EMAIL",
