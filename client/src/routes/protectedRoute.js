@@ -11,7 +11,7 @@ function ProtectedRoute(props) {
 
   useEffect(() => {
     isTokenValid(token);
-  }, []);
+  }, [token]);
 
   return token ? <Component /> : <Redirect to={{ pathname: "/login" }} />;
 }
