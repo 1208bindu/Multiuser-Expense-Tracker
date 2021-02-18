@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../context/GlobalState";
+import register from "../../images/Register.jpg";
 
 import "./style.css";
 
@@ -112,6 +113,7 @@ const Register = (props) => {
       </div>
 
       <div id="form1">
+        <img src={register} alt="LoginPage" className="card responsive-img" />
         <div className="card margins">
           <form id="form" onSubmit={onsub} className="white">
             <h4 className="grey-text text-darken-3">Register</h4>
@@ -175,11 +177,11 @@ const Register = (props) => {
               <p id="demo1" className="alert-p"></p>
             </div>
             <div className="input-field">
-              <button className="btn blue darken-2 z-depth-0">Next</button>
+              <button className="btn navColor z-depth-0">Next</button>
               <span className="right">
                 <h6 className="black-text">
                   Already Have an account...{" "}
-                  <Link to="/login">
+                  <Link to="/login" className="textColor">
                     <b> Login </b>
                   </Link>
                 </h6>

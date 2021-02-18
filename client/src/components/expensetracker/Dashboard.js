@@ -3,7 +3,7 @@ import Header from "./Header";
 import Balance from "./Balance";
 import IncomeExpenses from "./IncomeExpenses";
 import NewTransaction from "./NewTransaction";
-import TransactionList from "./TransactionList";
+import AllTransactions from "./AllTransactions";
 import "../../css/ExpensesCss.css";
 import Navbar from "../layout/Navbar";
 
@@ -17,7 +17,7 @@ const Dashboard = (props) => {
           <Header />
           <Balance />
           <IncomeExpenses />
-          <TransactionList />
+          <AllTransactions />
           <NewTransaction />
         </div>
       </div>

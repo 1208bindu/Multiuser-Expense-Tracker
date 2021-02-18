@@ -70,7 +70,7 @@ const Login = () => {
       </div>
       <div className="row " id="form1">
         <div className="card center col l5 m5 hide-on-small-only">
-          <img src={loginImage} alt="LoginPage" />
+          <img src={loginImage} alt="LoginPage" className="responsive-img" />
         </div>
 
         <div className="col s10 offset-s1 l5 m5 offset-m2 offset-l1">

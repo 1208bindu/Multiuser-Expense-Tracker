@@ -19,6 +19,10 @@ const TransactionSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  category: {
+    type: String,
+    default: "income",
+  },
 });
 
 module.exports = mongoose.model("Transaction", TransactionSchema);

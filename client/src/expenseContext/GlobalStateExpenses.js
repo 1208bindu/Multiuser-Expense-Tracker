@@ -6,6 +6,7 @@ const initialState = {
   transaction: [],
   error: null,
   isLoading: true,
+  length: 0,
 };
 
 export const GlobalContextExpenses = createContext(initialState);
@@ -13,7 +14,7 @@ export const GlobalContextExpenses = createContext(initialState);
 export const GlobalProviderExpenses = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
-  async function getTransaction(id) {
+  async function getTransaction(id, num) {
     try {
       const config = {
         headers: {
@@ -21,7 +22,7 @@ export const GlobalProviderExpenses = ({ children }) => {
         },
         data: {},
       };
-      const id1 = { userId: id };
+      const id1 = { userId: id, pNum: num };
       const res = await axios.post(
         "/api/v1/transaction/getDetails",
         id1,
@@ -31,6 +32,7 @@ export const GlobalProviderExpenses = ({ children }) => {
       dispatch({
         type: "GET_TRANSACTION",
         payload: res.data.data,
+        len: res.data.count,
       });
     } catch (err) {
       dispatch({
@@ -82,6 +84,7 @@ export const GlobalProviderExpenses = ({ children }) => {
         transaction: state.transaction,
         error: state.error,
         isLoading: state.isLoading,
+        length: state.length,
         getTransaction,
         deleteTransaction,
         addTransaction,

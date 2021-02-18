@@ -5,16 +5,25 @@ const Transaction = require("../models/transactionModel");
 // @access  Public
 exports.getTransaction = async (req, res, next) => {
   try {
-    const { userId } = req.body;
+    const { userId, pNum } = req.body;
+    console.log(req.body);
+    const pNumber = typeof pNum !== "undefined" ? pNum : 1;
 
-    const transaction = await Transaction.find();
+    const pSize = 5;
+    const startPoint = 0;
+    const endPoint = pNumber * pSize;
+    console.log(pNumber, startPoint, endPoint);
+
+    const transaction = await Transaction.find().sort({ createdAt: -1 });
 
     const transactions = await transaction.filter((t) => userId === t.userId);
+
+    const transDisplay = await transactions.slice(startPoint, endPoint);
 
     return res.status(200).json({
       success: true,
       count: transactions.length,
-      data: transactions,
+      data: transDisplay,
     });
   } catch (err) {
     return res.status(500).json({
@@ -29,7 +38,7 @@ exports.getTransaction = async (req, res, next) => {
 // @access  Public
 exports.addTransaction = async (req, res, next) => {
   try {
-    const { text, amount, userId } = req.body;
+    const { text, amount, userId, category } = req.body;
 
     const transaction = await Transaction.create(req.body);
 

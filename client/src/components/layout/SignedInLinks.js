@@ -27,7 +27,9 @@ function SignedInLinks() {
           <Link to="/" className="left brand-logo">
             {" "}
             Welcome{" "}
-            {currentUser ? currentUser.firstname + currentUser.lastname : ""}
+            {currentUser
+              ? currentUser.firstname + " " + currentUser.lastname
+              : ""}
           </Link>
 
           <a

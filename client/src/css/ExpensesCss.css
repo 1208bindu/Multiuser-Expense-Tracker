@@ -1,12 +1,16 @@
+.header {
+  padding: 0% !important;
+}
 .delete-btn {
   cursor: pointer;
   background-color: #e74c3c;
   border: 0;
   color: #fff;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 2px 5px;
+  font-size: 17px;
+  line-height: 17px;
+  padding: 1px 3px;
   position: absolute;
+  border-radius: 3px;
   top: 50%;
   left: 0;
   transform: translate(-100%, -50%);
@@ -22,15 +26,16 @@
   opacity: 1;
 }
 .li-list-plus {
-  padding: 1%;
-  margin: 2%;
+  padding: 0% 1% !important;
+  margin: 1% !important;
 
   border-right: 5px solid green;
 }
 
 .li-list-minus {
-  padding: 1%;
-  margin: 2%;
+  padding: 0% 1% !important;
+  margin: 1% !important;
+
   border-right: 5px solid red;
 }
 .navColor {

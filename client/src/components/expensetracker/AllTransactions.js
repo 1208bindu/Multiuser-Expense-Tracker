@@ -1,19 +1,17 @@
 import React, { useContext, useState, useEffect } from "react";
-import TransactionDetails from "./TransactionDetails";
 import { GlobalContextExpenses } from "../../expenseContext/GlobalStateExpenses";
-
+import TransactionDetails from "./TransactionDetails";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../../context/GlobalState";
 
-const TransactionLists = (props) => {
+const TransactionList = () => {
   const { transaction, length, getTransaction } = useContext(
     GlobalContextExpenses
   );
   const { currentUser } = useContext(GlobalContext);
   console.log(length);
 
-  const [pNum, setPNum] = useState(props.match.params.pNum);
-
+  const [pNum, setPNum] = useState(1);
   var rlength = length - pNum * 5;
 
   useEffect(() => {
@@ -21,8 +19,15 @@ const TransactionLists = (props) => {
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentUser.id]);
 
+  const showMore = () => {
+    getTransaction(currentUser.id, pNum + 1);
+    setPNum(pNum + 1);
+    rlength = length - pNum * 5;
+  };
+
   return (
     <div>
+      <h5>History</h5>
       <ul className="list">
         {transaction
           ? transaction.map((trans) => (
@@ -31,14 +36,13 @@ const TransactionLists = (props) => {
           : null}
       </ul>
       {rlength > 0 ? (
-        <p className="center">
-          <Link to={"/transactionList/" + (pNum + 1)}>
-            <b>View More</b>
-          </Link>
+        <p className="center" style={{ cursor: "pointer" }} onClick={showMore}>
+          <b>
+            View More &nbsp; <i className="fa fa-sort-desc fa-2x"></i>
+          </b>
         </p>
       ) : null}
     </div>
   );
 };
-
-export default TransactionLists;
+export default TransactionList;

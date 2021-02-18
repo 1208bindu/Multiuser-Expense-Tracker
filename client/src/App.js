@@ -6,6 +6,7 @@ import Dashboard from "./components/expensetracker/Dashboard";
 import ProtectedRoute from "./routes/protectedRoute";
 import Register from "./components/authentication/Register";
 import Login from "./components/authentication/Login";
+import TransactionList from "./components/expensetracker/TransactionList";
 import ConfirmEmailId from "./components/authentication/ConfirmEmail";
 import { GlobalProvider } from "./context/GlobalState";
 import { GlobalProviderExpenses } from "./expenseContext/GlobalStateExpenses";
@@ -36,6 +37,11 @@ function App() {
                 component={ChangePassword}
               ></Route>
               <Route exact path="/forgotpwd" component={ForgotPwd}></Route>
+              <Route
+                exact
+                path="/transactionList/:pNum"
+                component={TransactionList}
+              ></Route>
             </Switch>
           </div>
         </BrowserRouter>

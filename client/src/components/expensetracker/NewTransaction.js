@@ -1,16 +1,22 @@
 /* eslint-disable no-redeclare */
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { GlobalContextExpenses } from "../../expenseContext/GlobalStateExpenses";
 import { GlobalContext } from "../../context/GlobalState";
 import "../../css/ExpensesCss.css";
 
 const NewTransaction = () => {
-  const { addTransaction } = useContext(GlobalContextExpenses);
+  const { addTransaction, getTransaction } = useContext(GlobalContextExpenses);
   const { currentUser } = useContext(GlobalContext);
 
   const [details, setDetails] = useState("");
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("income");
+  const [addSuccess, setAddSuccess] = useState(false);
+
+  useEffect(() => {
+    if (addSuccess) getTransaction(currentUser.id);
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentUser.id, addSuccess]);
 
   const onSub = (e) => {
     e.preventDefault();
@@ -19,16 +25,19 @@ const NewTransaction = () => {
         details: details,
         amount: amount * -1,
         userId: currentUser.id,
+        category: category,
       };
     } else {
       var newDetails = {
         details: details,
         amount: amount,
         userId: currentUser.id,
+        category: category,
       };
     }
 
     addTransaction(newDetails);
+    setAddSuccess(true);
     setAmount("");
     setDetails("");
   };

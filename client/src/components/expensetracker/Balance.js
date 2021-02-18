@@ -21,9 +21,9 @@ const Balance = () => {
 
   return (
     <div className="card center navColor white-text text-darken-2">
-      <h4>
+      <h5>
         Your Balance - <span> {total}.00 NOK</span>
-      </h4>
+      </h5>
     </div>
   );
 };

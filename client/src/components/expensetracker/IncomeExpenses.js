@@ -18,13 +18,13 @@ const IncomeExpenses = () => {
 
   return (
     <div className="row ie-row">
-      <div className="col s6 card center">
+      <div className="col s6 card header center">
         <h5>Income</h5>
         <p className="green-text">
           <b>(+) {income}.00 NOK </b>
         </p>
       </div>
-      <div className="col s6 card center ">
+      <div className="col s6 card header center ">
         <h5>Expense</h5>
         <p className="red-text">
           <b>(-) {Math.abs(expense)}.00 NOK</b>
