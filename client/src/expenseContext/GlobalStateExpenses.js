@@ -4,6 +4,7 @@ import axios from "axios";
 
 const initialState = {
   transaction: [],
+  fullList: [],
   error: null,
   isLoading: true,
   length: 0,
@@ -33,6 +34,7 @@ export const GlobalProviderExpenses = ({ children }) => {
         type: "GET_TRANSACTION",
         payload: res.data.data,
         len: res.data.count,
+        list: res.data.fulldata,
       });
     } catch (err) {
       dispatch({
@@ -85,6 +87,7 @@ export const GlobalProviderExpenses = ({ children }) => {
         error: state.error,
         isLoading: state.isLoading,
         length: state.length,
+        fullList: state.fullList,
         getTransaction,
         deleteTransaction,
         addTransaction,

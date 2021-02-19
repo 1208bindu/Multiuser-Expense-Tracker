@@ -7,6 +7,7 @@ export default (state, action) => {
         isLoading: false,
         transaction: action.payload,
         length: action.len,
+        fullList: action.list,
       };
     case "TRANSACTION_ERROR":
       return {

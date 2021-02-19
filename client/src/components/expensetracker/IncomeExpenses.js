@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { GlobalContextExpenses } from "../../expenseContext/GlobalStateExpenses";
 
 const IncomeExpenses = () => {
-  const { transaction } = useContext(GlobalContextExpenses);
+  const { fullList } = useContext(GlobalContextExpenses);
   let income = 0;
   let expense = 0;
 
@@ -10,8 +10,8 @@ const IncomeExpenses = () => {
   //   trans.amount > 0 ? (income += trans.amount) : (expense += trans.amount)
   // );
 
-  if (transaction) {
-    transaction.map((trans) =>
+  if (fullList) {
+    fullList.map((trans) =>
       trans.amount > 0 ? (income += trans.amount) : (expense += trans.amount)
     );
   }
