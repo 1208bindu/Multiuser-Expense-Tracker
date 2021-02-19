@@ -5,15 +5,20 @@ import { GlobalContext } from "../context/GlobalState";
 
 function ProtectedRoute(props) {
   const Component = props.component;
-  const { isTokenValid } = useContext(GlobalContext);
+  const { isauthenticated } = useContext(GlobalContext);
+  // const { isTokenValid } = useContext(GlobalContext);
 
-  let token = localStorage.getItem("auth-token");
+  // let token = localStorage.getItem("auth-token");
 
-  useEffect(() => {
-    isTokenValid(token);
-  }, [token]);
+  // useEffect(() => {
+  //   isTokenValid(token);
+  // }, [token]);
 
-  return token ? <Component /> : <Redirect to={{ pathname: "/login" }} />;
+  return isauthenticated ? (
+    <Component />
+  ) : (
+    <Redirect to={{ pathname: "/login" }} />
+  );
 }
 
 export default ProtectedRoute;
